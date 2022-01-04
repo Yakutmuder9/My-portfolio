@@ -1,0 +1,535 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway',sans-serif;
+    --outer-shadow: 3px 3px 3px #d0d0d0,-3px -3px 3px #f8f8f8;
+    --outer-shadow: 0px 0px 0px #d0d0d0,0px 0px 0px #f8f8f8;
+   
+}
+body{
+    width: 80%;
+    margin-left: 20%;
+    overflow-x: hidden;
+    
+}
+/* Home page*/
+.home-page{
+    width:100%;
+    height: 100vh;
+    background: rgb(221, 229, 255);
+}
+nav{
+    margin-left: -20%;
+    position: fixed;
+    width: 20%;
+    height: 100vh;
+    background: rgb(191, 201, 228);
+    align-items: center;
+    overflow-wrap: wrap;
+}
+nav img{
+    width: 15vmin;
+    height: 8vmin;
+    align-items: center;
+    margin: 10vh auto 10vh 12%;
+    font-size: 3.8vmin;
+    font-weight: 800;
+    align-items: center;
+    justify-content: space-between;
+
+}
+nav ul{
+    margin: 1% 10% 15vh 12%;
+}
+nav ul a{
+    text-decoration: none;
+    color: black;
+    font-size: 3vmin;
+    list-style: none;
+}
+nav ul a li{
+    padding-top: 18px;
+    padding-bottom: 5px;
+}
+nav ul a li:hover{
+    color: #cc3A3b;
+}
+nav p{
+    margin: 20% auto auto 12%;
+    font-size: 1.8vmin;
+    color: rgb(112, 112, 112);
+}
+.main{
+    background:rgb(221, 229, 255);
+    text-align: center;
+}
+.main h2 span{
+    color: #cc3A3b;
+}
+.main img{
+    width: 50vmin;
+    height: 50vmin;
+    padding: 10px;
+    margin-top: 20vh;
+    border-radius: 50%;
+    border:10px solid rgb(238, 238, 238);
+    box-shadow: -1px -5px 60px #cc3A3b;
+    margin-bottom: 6vh;
+}
+.main p{
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+}
+.social-links i{
+    width: 25px;
+    height: 25px;
+    padding-top: 5px;
+    background: #cc3A3b;
+    border-radius: 50%;
+    margin-left: 5px;
+    cursor: pointer;
+    border: none;
+    color: whitesmoke;
+}
+
+
+/* About Page*/
+.about-page{
+    padding: 3vmin 5%;
+    height: 100vh;
+    background: rgb(221, 229, 255);
+}
+.about-page h1 hr{
+    width: 80px;
+    height: 4px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    background: #cc3A3b;
+}
+.about-page h1 span hr{
+    width: 40px;
+    margin-bottom: 2vmin;
+}
+.define h2{
+    font-size: 1.1rem;
+}
+.define h2 span{
+    color: #cc3A3b;
+}
+.define p{
+    padding-top: 2vmin;
+    color: gray;
+    font-size: .8rem;
+    margin-bottom: 5vmin;
+}
+.info-detail{
+    margin-top: -5vmin;
+    height: 43vmin;
+    display: flex;
+    font-size: 1.95vmin;
+    justify-content: space-between;
+    margin-bottom: -12vmin;
+}
+.info-first p, .info-second p {
+    padding: 2vmin 0vmin;
+}
+.info-third{
+    padding-left: 10px;
+    padding-right: 20px;
+    margin-top: -.6vmin;
+    width: 40vmin;
+}
+.info-third p{
+    padding: 2.6vmin 0vmin;
+}
+.info-third hr{
+    height: 4px;
+    margin: 0px 10vmin 0px 0px;
+    background: #cc3A3b;
+    margin-top: -1vmin;
+    border: none;
+    box-shadow: -1px 1px 4px gray;
+}
+.info-detail hr{
+    margin-right: 5vmin;
+}
+button{
+    margin-top: 3px;
+    font-size: 2vmin;
+    background: #cc3A3b;
+    border: none;
+    color: whitesmoke;
+    border-radius: 50px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+button:hover{
+    position: absolute;
+    color: #cc3A3b;
+    background: whitesmoke;
+    width: 100;
+    height: 30px;
+    font-weight: bolder;
+}
+.training{
+    overflow: hidden;
+    margin-top: 4vmin;
+    height: 44vh;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.education h2, .experience h2{
+    margin-bottom: 2vmin;
+    font-size: 3.2vmin;
+    padding: 5px 8vmin;
+    background: rgba(153, 205, 50, 0.651);
+}
+.experience h2{    
+    color: #cc3A3b;
+}
+.education-block{
+    width: 34vw;
+    height: 30vh;
+    opacity: 70%;
+    margin-right:3vmin;
+    border-radius: 10px;
+    transform: rotate(-5deg);
+    box-shadow: -2px 2px 40px grey;
+    background: rgb(255, 253, 248);
+    padding: 20px 10px 10px 4vmin;
+}
+.education-block:before, .experience-block:before{
+    display: block;
+    content: "";
+    width: 20px;
+    height: 200px;
+    margin-left: 5px;
+    margin-top: 5px;
+    position: absolute;
+    box-shadow: -2px 2px 4px;
+    top: 5px;
+    left: 5px;
+    border-left: 5px solid #cc3A3b;
+}
+.experience-block{
+    width: 34vw;
+    height: 30vh;
+    opacity: 80%;
+    border-radius: 10px;
+    margin-top: 4vmin;
+    margin-left: -3.6vmin;
+    transform: rotate(10deg);
+    box-shadow: -2px 2px 60px grey;
+    background: rgb(255, 253, 248);
+    padding: 20px 10px 10px 4vmin;
+}
+.experience-block p, .education-block p{
+    font-size: 1.6vmin;
+    padding: .6vmin 0vmin;
+    opacity: 100%;
+}
+.experience-block h3, .education-block h3{
+    font-size: 1.8vmin;
+    opacity: 200%;
+    font-weight: 700;
+    color: #cc3A3b;
+}
+
+
+
+/* Service Page*/
+.service-page{
+    width: 100%;
+    height: 100vh;
+    padding: 15vmin 5vmin 5vmin 5vmin;
+    background: rgb(221, 229, 255);
+    overflow: hidden;
+}
+.service-page hr{
+    width: 80px;
+    height: 4px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    background: #cc3A3b;
+}
+.service-page span hr{
+    width: 40px;
+    margin-bottom: 2vmin;
+}
+.navlist{
+    margin: 15px 20px 15px 10px;
+}
+.navlist ul{
+    display: flex;
+    width: 40vw;
+    margin-left: 15vw;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+.navlist ul a{
+    text-decoration: none;
+    list-style:none;
+    color: black;
+    font-weight: bolder;
+    padding-right: -1vmin;
+    font-size: 2.3vmin;
+    padding: 0px 2px;
+}
+.navlist ul a:hover{
+    color: #cc3A3b;
+}
+.top-box{
+    display: flex;
+    justify-content: space-between;
+}
+.bottom-box{
+    display: flex;
+    justify-content: space-between;
+}
+.prev, .tween, .next{
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.356);
+    text-align: center;
+    padding: 3vmin 5px;
+    width: 25vw;
+    height: 30vh;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: -2px 2px 20px rgb(143, 164, 235);
+}
+.prev:hover, .tween:hover, .next:hover{
+    width: 28vw;
+    height: 35vh;
+    margin-top: -1vmin;
+    background-color: rgba(0, 0, 0, 0.062);
+}
+.prev i, .tween i, .next i{
+    color: #cc3A3b;
+    font-size: 3vmin;
+}
+.prev h2, .tween h2, .next h2{
+    font-size: 2.4vmin;
+    padding: 1.5vmin 0px;
+}
+.prev p, .tween p, .next p{
+    font-size: 2.2vmin;
+}
+
+
+/* Portolio Page*/
+.portfolio-page{
+    width: 100%;
+    height: 100vh;
+    padding: 10vmin 5vmin 5vmin 5vmin;
+    background: rgb(221, 229, 255);
+    overflow: hidden;
+}
+.portfolio-page hr{
+    width: 80px;
+    height: 4px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    background: #cc3A3b;
+}
+.portfolio-page span hr{
+    width: 40px;
+    margin-bottom: 2vmin;
+}
+.service-box img{
+    width: 50vmin;
+    height: 40vmin;
+}
+.prev img, .tween img, .next img{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/* Blog Page*/
+.blog-page{
+    width: 100%;
+    height: 100vh;
+    padding: 10vmin 5vmin 5vmin 5vmin;
+    background: rgb(221, 229, 255);
+    overflow: hidden;
+}
+.blog-page hr{
+    width: 80px;
+    height: 4px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    background: #cc3A3b;
+}
+.blog-page span hr{
+    width: 40px;
+    margin-bottom: 2vmin;
+}
+.bloming-list{
+    overflow: hidden;
+    display: flex;
+    margin-right: 2vmin;
+}
+.blom-one, .blom-two, .blom-three{
+    height: 65vh;
+    width: 25vw;
+    background: rgba(255, 255, 255, 0.356);
+    border-radius: 10px;
+    margin: 5vmin 10px 20px 10px;
+    box-shadow: -2px 2px 25px rgb(143, 164, 235);
+}
+.blom-one:hover, .blom-two:hover, .blom-three:hover{
+    width: 30vw;
+    height: 70vh;
+    margin-top: -2px;
+}
+.bloming-list h5{
+    position: absolute;
+    margin-top: 26vh;
+    font-size: 2vmin;
+    padding: 2px 4px;
+    margin-left: 5px;
+    color: whitesmoke;
+    background: #cc3A3b;
+}
+.blom-one img, .blom-two img, .blom-three img{
+    z-index: -1;
+    width: 100%;
+    height: 30vh;
+    border-radius: 10px 10px 0px 0px;
+}
+.bloming-list h3{
+    padding: 2vmin ;
+    font-size: 3vmin;
+}
+.bloming-list p{
+    font-size: 1.8vmin;
+    padding: 0vmin 2vmin 2vmin 2vmin;
+}
+.bloming-list h6{
+    font-size: 1.5vmin;
+    padding: 0vmin 2vmin;
+}
+
+/* Contact Page */
+.contact-page{
+    width: 100%;
+    height: 100vh;
+    padding: 8vmin 5vmin 5vmin 5vmin;
+    background: rgb(221, 229, 255);
+    overflow: hidden;
+}
+.contact-page hr{
+    width: 80px;
+    height: 4px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    background: #cc3A3b;
+}
+.contact-page span hr{
+    width: 40px;
+    margin-bottom: 5vmin;
+}
+.method{
+    width: 50vw;
+    margin-left: 10vw;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2vmin;
+}
+.phone, .gps, .email{
+    align-items: center;
+}
+.phone i, .gps i, .email i{
+    color: #cc3A3b;
+}
+.contact-insertion{
+    overflow: hidden;
+    padding: 5vmin 5vmin 5vmin 5vmin;
+}
+.contact-top input{
+    width: 28.2vw;
+    height: 6vh;
+    margin: 1vw 0;
+    padding-left: 10px;
+    border-radius: 20px;
+    border: 2px solid grey;
+}
+.contact-midd input{
+    width: 60vw;
+    height: 6vh;
+    margin: 3vmin 0;
+    padding-left: 10px;
+    border-radius: 20px;
+    padding-left: 2vmin;
+    border: 2px solid grey;
+}
+.contact-last input{
+    width: 60vw;
+    height: 20vh;
+    margin: 3vmin 0;
+    padding: -10px 10px auto 10px;
+    border-radius: 20px;
+    padding-left: 2vmin;
+    border: 2px solid grey;
+    align-items: right;
+}
+.lastBtn button{
+    margin-top: -4vmin;
+    margin-left: 25%;
+    width: 30vw;
+    height: 40px;
+}
+.lastBtn button:hover{
+    margin-top: -2vmin;
+    margin-left: 20%;
+}
+input{
+    font-size: 20px;
+    padding-left: 2vmin;
+}
+
+@media (max-width:500px){
+    .portfolio-page, .blog-page, .service-page, .about-page{
+        height: fit-content;
+    }
+    .training, .top-box, .bottom-box, .bloming-list{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .blom-one, .blom-two, .blom-three {
+        width: 100%;
+        display: block;
+        height: 70vh;
+        font-size: 200px;
+        border-radius: 10px;
+    }
+    .blom-one:hover, .blom-two:hover, .blom-three:hover, .prev:hover, .tween:hover, .next:hover {
+        width: 100%;
+        margin-top: -2vmin;
+        font-size: 50px;
+        box-shadow: -2px 20px 40px #cc3A3b;
+    }
+    .blom-one img, .blom-two img, .blom-three img{
+        height: 40vh;
+    }
+    .experience-block, .education-block{
+        width: max-content;
+        margin:  5vmin 6vmin 10vmin 5vmin;
+    }
+    .training{
+        margin-top: 15vmin;
+    }
+    .info-first, .info-second, .info-third, .prev, .tween, .next{
+        width: 100%;
+    }
+}
