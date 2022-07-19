@@ -1,260 +1,1017 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="ds.css">
-    <script src="https://kit.fontawesome.com/7e85f88570.js" crossorigin="anonymous"></script>
-    <title>Portfolio</title>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+  <!-- Additional CSS must be placed after Bootstrap CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/7e85f88570.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/styels.css" />
+
+  <title>Student Dashbord</title>
+  <link rel="shortcut icon" href="img/titel_logo.png" type="">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["", "Hours", { role: "style" }],
+        ["", 16.45, "yellowgreen"],
+        ["", 14.30, "gold"],
+        ["", 12.49, "dark"],
+        ["", 13.30, "gold"],
+        ["", 14.45, "yellowgreen"],
+        ["", 13.30, "gold"],
+        ["", 10.49, "dark"],
+        ["", 13.30, "gold"],
+        ["", 15.45, "yellowgreen"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+        {
+          calc: "stringify",
+          sourceColumn: 1,
+          type: "string",
+          role: "annotation"
+        },
+        2]);
+
+      var options = {
+        width: 470,
+        height: 295,
+        bar: { groupWidth: "20%" },
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+    }
+  </script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Work', 'Expenses'],
+        ['2019', 100, 40],
+        ['2020', 117, 46],
+        ['2021', 66, 112],
+        ['2022', 103, 54]
+      ]);
+
+      var options = {
+        title: 'Student Performance',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+      chart.draw(data, options);
+    }
+  </script>
 </head>
-<body>
 
-<!-- Home Page -->
-    <div class="home-page" id="Firstpage">
-        <nav>
-            <img src="pro.png" alt="">
-            <ul>
-                <a href="#Firstpage"><li><i class="fas fa-home">&nbsp;</i> Home</li></a><hr>
-                <a href="#secondpage"><li><i class="fas fa-user-alt">&nbsp;</i> About</li></a><hr>
-                <a href="#thirdpage"><li><i class="fas fa-server">&nbsp;</i> Service</li></a><hr>
-                <a href="#fourthpage"><li><i class="fas fa-suitcase">&nbsp;</i>Portfolio</li></a><hr>
-                <a href="#fivithpage"><li><i class="fas fa-envelope">&nbsp;</i> Blog</li></a><hr>
-                <a href="#lastpage"><li><i class="fas fa-comments">&nbsp;</i>Contact</li></a><hr>
-            </ul>
-            <p>© 2022 The LoftyCode Template.</p>
+<body class="index">
+
+  <div class="dashbord d-flex justify-content-end">
+    <div class="aside_container vw-100 d-none position-absolute d-lg-block d-xl-block vh-100">
+      <aside
+        class="sidenav navbar navbar-vertical jumbotron-fluid  justify-content-star position-absolute d-lg-block d-xl-block vh-100"
+        id="sidenav-main">
+        <div class="sidenav-header pl-4 pt-3">
+          <a class="navbar-brand text-white" href="#">
+            <h3>Dashboard</h3>
+          </a>
+        </div>
+        <hr class="horizontal bg-secondary mt-2" />
+
+        <div class="navbar-collapse pl-4 text-secondary w-auto" id="sidenav-collapse-main">
+          <ul class="nav nav-tabs d-block" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link d-flex active" href="index.html">
+                <div class="">
+                  <i class="material-icons">dashboard</i>
+                </div>
+                <span class="nav-link-text ms-1">&nbsp;Dashboard</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link d-flex" href="course.html">
+                <div class="">
+                  <span class="material-icons">
+                    bookmark
+                  </span>
+                </div>
+                <span class="nav-link-text ms-1">&nbsp;Course</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex" href="event.html">
+                <div class="">
+                  <span class="material-icons">
+                    event
+                  </span>
+                </div>
+                <span class="nav-link-text ms-1" id="#navlikn_text">&nbsp;Event</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex" href="inbox.html">
+                <div class="">
+                  <span class="material-icons">
+                    move_to_inbox
+                  </span>
+                </div>
+                <span class="nav-link-text ms-1">&nbsp;Inbox</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex" href="resource.html">
+                <div class="">
+                  <span class="material-icons">
+                    library_books
+                  </span>
+                </div>
+                <span class="nav-link-text ms-1">&nbsp;Resources</span>
+              </a>
+            </li>
+            <li class="nav-item mt-3">
+              <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">
+                Account Detailss
+              </h6>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex" href="profile.html">
+                <div class="">
+                  <span class="material-icons">
+                    account_circle
+                  </span>
+                </div>
+                <span class="nav-link-text ms-1">&nbsp;Profile</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex" href="signin.html">
+                <div class="">
+                  <span class="material-icons">
+                    login
+                  </span>
+                </div>
+                <span class="nav-link-text ms-1">&nbsp;Sign In</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex" href="help.html">
+                <div class="">
+                  <span class="material-icons">
+                    help
+                  </span>
+                </div>
+                <span class="nav-link-text ms-1">&nbsp;Help</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidenav-footer mx-3 mt-3">
+          <div class="card" id="sidenavCard">
+            <div class="card-body text-start p-3 w-100">
+              <div
+                class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
+                <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true"></i>
+              </div>
+              <div class="docs-info">
+                <h6 class="text-white up mb-0">Need help?</h6>
+                <p class="text-xs font-weight-bold text-secondary">Please check our docs</p>
+                <a href="" class="btn btn-white btn-outline-primary btn-sm w-100 text-white mb-0">Documentation</a>
+              </div>
+            </div>
+          </div>
+          <a class="mt-3 d-flex justify-content-end" href="#" id="side_toggler">
+            <h6><i class="fa fa-arrow-left w-10 btn bg-primary text-white"></i></h6>
+          </a>
+        </div>
+      </aside>
+    </div>
+
+
+
+    <main class="main_container vh-100">
+      <div class="container-fluid py-4">
+        <nav class="navbar navbar-main navbar-expand-lg  sticky-top bg-dark " id="navbar_top">
+          <div class=" w-100 py-1 px-3 d-flex justify-content-between">
+
+
+            <nav class="navbar navbar-light d-block .d-sm-none d-lg-none">
+              <a class="navbar-brand" href="#"></a>
+              <button class="navbar-toggler " style="color: #fff!important; font-size:28px;" type="button"
+                data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+              </button>
+
+              <div class="collapse navbar-collapse p-3 " id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                    <a class="nav-link text-white text-bold" href="index.html">Dashboard<span
+                        class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-secondary" href="course.html">Courses</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-secondary" href="event.html">Event</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-secondary" href="inbox.html">Inbox</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-secondary" href="resource.html">Resources</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-secondary" href="signin.html">Sign in</a>
+                  </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+              </div>
+            </nav>
+
+            <div aria-label="breadcrumb">
+              <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                <li class="breadcrumb-item text-sm">
+                  <a class="opacity-5 text-white" href="">Pages</a>
+                </li>
+                <li class="breadcrumb-item text-sm text-white active" aria-current="page">
+                  Dashboard
+                </li>
+              </ol>
+              <h5 class="font-weight-bolder mb-0 text-secondary">Dashboard</h5>
+            </div>
+
+            <div class="collapse navbar-collapse d-lg-flex justify-content-end mt-sm-0 mt-2 me-md-0 me-sm-4 w-auto"
+              id="navbar">
+              <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                <div class="input-group">
+                  <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" placeholder="Type here..." />
+                </div>
+              </div>
+              <ul class="navbar-nav justify-content-end">
+                <li class="nav-item d-flex align-items-center">
+                  <a href="" class="nav-link text-body font-weight-bold px-2 p-1 ml-2 btn btn-outline-primary">
+                    <i class="fa fa-user" title="Edit"></i>
+                    <span class="d-sm-inline d-none ">Sign In</span>
+                  </a>
+                </li>
+
+                <li class="nav-item px-3 d-flex align-items-center">
+                  <a href="" class="nav-link text-body p-0">
+                    <i class="fa fa-cog cursor-pointer" id="setting"></i>
+                  </a>
+                </li>
+
+
+                <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                  <a href="" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <div class="notification">
+                      <span class="badge badge-danger position-absolute">3</span>
+                      <i class="fa fa-bell cursor-pointer" id="setting"></i>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </nav>
-        <div class="main">
-            <img src="Untitled.jpg" alt="">
-            <h2>Ya<span>k</span>ut Ahm<span>e</span>din</h2>
-            <p>I'm a Web Developer</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/loftyCode/"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://t.me/yakutmuder9"><i class="fab fa-telegram-plane"></i></a>
-                <a href="https://www.linkedin.com/redir/general-malware-page?url=yakutmuder9%40gmail%2ecom"><i class="fas fa-envelope"></i></a>
-                <a href="linkedin.com/in/yakut-ahmedin-17586a226"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-    </div>
-<!-- About Page -->
-    <div class="about-page" id="secondpage">
-        <h1>About Me<hr><span><hr></span></h1>
-        <div class="define">
-            <h2>I'm Yakut Ahmedin and <span>Wab Developer</span></h2>
-            <p>Hi, My name is Yakut Ahmedin. I am web Developer, and I'm very passionate and dedicated to my work. With 10 Years 
-            experience as a professional Web Developer. I have acquired the skills and knowldge necessary to make project a success. I
-            enjoy every stap of the design process, from decision and collabration.
-            </p>
-        </div>
-        <div class="discription">
-            <div class="info">
-                <div class="info-detail">
-                    <div class="info-first">
-                        <p><strong>Birthday</strong>: 5 April 1997</p><hr>
-                        <p><strong>Website</strong>: www.loftyCode.com</p><hr>
-                        <p><strong>Degree</strong>: BCCC</p><hr>
-                        <p><strong>City</strong>: Baltimore</p><hr>
-                        <button>Download CV</button>
-                    </div>
-                    <div class="info-second">
-                        <p><strong>Age</strong>: 24</p><hr>
-                        <p><strong>Email</strong>: info@gmail.com</p><hr>
-                        <p><strong>Phone</strong>: +1 443 000 0000</p><hr>
-                        <p><strong>Freelance</strong>: Available</p><hr>
-                        <button>Hire Me</button>
-                    </div>
-                    <div class="info-third">
-                        <p><strong>Javascript</strong>----------- 80%</p><hr>
-                        <p><strong>Wordpress</strong>---------- 92%</p><hr>
-                        <p><strong>Java</strong>-------------------  64%</p><hr>
-                        <p><strong>Bootstrap</strong>------------ 52%</p><hr>
-                    </div>
-                </div>
-            </div>
-            <div class="training">
-                <div class="education">
-                    <h2>Education</h2>
-                    <div class="education-block">
-                        <div class="education-cont">
-                            <h6>2010 - 2022</h6>
-                            <h3><strong>Master In Computer Science</strong></h3>
-                            <p>Lorem ipsum dolor sit amet, elementum lorem orane.</p>
-                        </div>
-                        <div class="education-cont">
-                            <h6>2018 - 2020</h6>
-                            <h3><strong>Studied at Bccc</strong></h3>
-                            <p>Lorem ipsum dolor sit amet, elementum lorem orane.</p>
-                        </div>
-                        <div class="education-cont">
-                            <h6>20016 - 2018</h6>
-                            <h3><strong>Bacholor Degree</strong></h3>
-                            <p>Lorem ipsum dolor sit amet, elementum lorem orane.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="experience">
-                    <h2>Experience</h2>
-                    <div class="experience-block">
-                        <div class="education-cont">
-                            <h6>2020 - 2022</h6>
-                            <h3><strong>Backend Developer</strong></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="education-cont">
-                            <h6>2018 - 2020</h6>
-                            <h3><strong>Frontend Developer</strong></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="education-cont">
-                            <h6>2016 - 2018</h6>
-                            <h3><strong>Graphic Designere</strong></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- Service Page -->
-    <div class="service-page" id="thirdpage">
-        <h1><strong>Services</strong></h1><hr><span><hr></span>
-        <div class="service-box">
-            <div class="top-box">
-                <div class="prev">
-                    <i class="fas fa-laptop"></i>
-                    <h2><strong>Web Design</strong></h2>
-                    <p>Lorem ipsum is simply dummy text of the painting and typesetting industy Lorem epsume.</p>
-                </div>
-                <div class="tween">
-                    <i class="fas fa-image"></i>
-                    <h2><strong>Photography</strong></h2>
-                    <p>Lorem ipsum is simply dummy text of the painting and typesetting industy Lorem epsume.</p>
 
-                </div>
-                <div class="next">
-                    <i class="fas fa-code"></i>
-                    <h2><strong>Web development</strong></h2>
-                    <p>Lorem ipsum is simply dummy text of the painting and typesetting industy Lorem epsume.</p>
-                </div>
-            </div>
-            <div class="bottom-box">
-                <div class="prev">
-                    <i class="fas fa-film"></i>
-                    <h2><strong>Video Editing </strong></h2>
-                    <p>Lorem ipsum is simply dummy text of the painting and typesetting industy Lorem epsume.</p>
-                </div>
-                <div class="tween">
-                    <i class="fas fa-rocket"></i>
-                    <h2><strong>Seo Optimization Design</strong></h2>
-                    <p>Lorem ipsum is simply dummy text of the painting and typesetting industy Lorem epsume.</p>
 
+
+        <div class="row mt-3">
+          <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+              <div class="card-body p-3">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="numbers">
+                      <p class="text-sm mb-0 text-capitalize font-weight-bold">
+                        Bootstrap Course
+                      </p>
+                      <h5 class="font-weight-bolder mb-0">
+                        53 Projects
+                        <span class="text-success text-sm font-weight-bolder">+55%</span>
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="col-4 text-end" id="course_icon">
+                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                      <img src="img/bootstrap.png" class="text-lg opacity-10" alt="">
+                    </div>
+                  </div>
                 </div>
-                <div class="next">
-                    <i class="fas fa-paint-brush"></i>
-                    <h2><strong>Logo Design</strong></h2>
-                    <p>Lorem ipsum is simply dummy text of the painting and typesetting industy Lorem epsume.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+              <div class="card-body p-3">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="numbers">
+                      <p class="text-sm mb-0 text-capitalize font-weight-bold">
+                        React and React Native
+                      </p>
+                      <h5 class="font-weight-bolder mb-0">
+                        72 Projects
+                        <span class="text-success text-sm font-weight-bolder">+23%</span>
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="col-4 text-end" id="course_icon">
+                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                      <img src="img/react.png" class="text-lg opacity-10" alt="">
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
-<!-- Portolio Page -->
-    <div class="portfolio-page" id="fourthpage">
-        <h1><strong>Portfolio</strong></h1><hr><span><hr></span>
-        <div class="navlist">
-            <ul>
-                <a href=""><li>All</li></a>
-                <a href=""><li>WebDev</li></a>
-                <a href=""><li>Photography</li></a>
-                <a href=""><li>Wordpress</li></a>
-            </ul>
-        </div>
-        <div class="service-box">
-            <div class="top-box">
-                <div class="prev">
-                    <img src="project-1.png" alt="">
+          </div>
+          <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+              <div class="card-body p-3">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="numbers">
+                      <p class="text-sm mb-0 text-capitalize font-weight-bold">
+                        BackEnd Node Js
+                      </p>
+                      <h5 class="font-weight-bolder mb-0">
+                        29 Projects
+                        <span class="text-danger text-sm font-weight-bolder">0%</span>
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="col-4 text-end" id="course_icon">
+                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                      <img src="img/node.png" class="text-lg opacity-10" alt="">
+                    </div>
+                  </div>
                 </div>
-                <div class="tween">
-                    <img src="project-2.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6">
+            <div class="card">
+              <div class="card-body p-3">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="numbers">
+                      <p class="text-sm mb-0 text-capitalize font-weight-bold">
+                        Web Application
+                      </p>
+                      <h5 class="font-weight-bolder mb-0">
+                        38 Projects
+                        <span class="text-success text-sm font-weight-bolder">+5%</span>
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="col-4 text-end" id="course_icon">
+                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                      <img src="img/webapp.png" class="text-lg opacity-10" alt="">
+                    </div>
+                  </div>
                 </div>
-                <div class="next">
-                    <img src="project-3.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-7 mb-lg-0 mb-4">
+            <div class="card">
+              <div class="card-body p-3">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="d-flex flex-column h-100">
+                      <p class="mb-1 pt-2 text-bold">Built by developers</p>
+                      <h5 class="font-weight-bolder">Weekly Community Projects</h5>
+                      <p class="mb-5">
+                        From colors, cards, typography to complex elements, you
+                        will find the full documentation.
+                      </p>
+                      <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
+                        Read More
+                        <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
+                    <div class="bg-gradient-primary border-radius-lg h-100">
+                      <img src="img/bootstrap.png" class="position-absolute h-100 w-50 top-0 d-lg-block d-none"
+                        alt="waves" />
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="bottom-box">
-                <div class="prev">
-                    <img src="project-4.png" alt=""></div>
-                <div class="tween">
-                    <img src="project-5.png" alt=""></div>
-                <div class="next">
-                    <img src="project-6.png" alt="">
+          </div>
+          <div class="col-lg-5">
+            <div class="card h-100 p-3 bg-dark"
+              style="background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)),url('img/webapp.png');background: dark;">
+              <div class="overflow-hidden position-relative border-radius-lg h-100">
+                <span class="mask bg-gradient-dark"></span>
+                <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
+                  <h5 class="text-white font-weight-bolder mb-4 pt-2">
+                    Work with the rockets
+                  </h5>
+                  <p class="text-white">
+                    Wealth creation is an evolutionarily recent positive-sum
+                    game. It is all about who take the opportunity first.
+                  </p>
+                  <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
+                    Read More
+                    <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
+                  </a>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-<!-- Blog Page -->
-    <div class="blog-page" id="fivithpage">
-        <h1><strong>Latest Blog</strong></h1><hr><span><hr></span>
-        <div class="bloming-list">
-            <div class="blom-one">
-                <h5>4 jan 2022</h5>
-                <img src="d7.jpg" alt="">
-                <h3><strong>Responsive Web Design</strong></h3>
-                <p>Lorem ipsum dolor sit amet, cosector adipisicing elit. Dolore, porro rem quod illo quam,eum alias id, repellends magi, guas.</p>
-                <h6>Tag: <span>HTML</span>, <span>CSS</span></h6>
+        <div class="row mt-4">
+          <div class="col-lg-5 mb-lg-0 mb-4">
+            <div class="card z-index-2">
+              <div class="card-body p-3">
+                <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
+                  <div class="chart">
+                    <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+                  </div>
+                </div>
+                <h6 class="ms-2 mt-4 mb-0">Active time</h6>
+                <p class="text-sm ms-2">
+                  (<span class="font-weight-bolder">+18%</span>) than last week
+                </p>
+                <div class="container border-radius-lg">
+                  <div class="row">
+                    <div class="col-3 py-3 ps-0">
+                      <div class="d-flex mb-2">
+                        <div
+                          class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-primary text-center me-2 d-flex align-items-center justify-content-center">
+                          svg
+                        </div>
+                        <p class="text-xs mt-1 mb-0 font-weight-bold">Users</p>
+                      </div>
+                      <h4 class="font-weight-bolder">13</h4>
+                      <div class="progress w-75">
+                        <div class="progress-bar bg-dark w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                    <div class="col-3 py-3 ps-0">
+                      <div class="d-flex mb-2">
+                        <div
+                          class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-info text-center me-2 d-flex align-items-center justify-content-center">
+                          svg
+                        </div>
+                        <p class="text-xs mt-1 mb-0 font-weight-bold">Clicks</p>
+                      </div>
+                      <h4 class="font-weight-bolder">2m</h4>
+                      <div class="progress w-75">
+                        <div class="progress-bar bg-dark w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                    <div class="col-3 py-3 ps-0">
+                      <div class="d-flex mb-2">
+                        <div
+                          class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-warning text-center me-2 d-flex align-items-center justify-content-center">
+                          svg
+                        </div>
+                        <p class="text-xs mt-1 mb-0 font-weight-bold">Project</p>
+                      </div>
+                      <h4 class="font-weight-bolder">33</h4>
+                      <div class="progress w-75">
+                        <div class="progress-bar bg-dark w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                    <div class="col-3 py-3 ps-0">
+                      <div class="d-flex mb-2">
+                        <div
+                          class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-danger text-center me-2 d-flex align-items-center justify-content-center">
+                          svg
+                        </div>
+                        <p class="text-xs mt-1 mb-0 font-weight-bold">Items</p>
+                      </div>
+                      <h4 class="font-weight-bolder">15</h4>
+                      <div class="progress w-75">
+                        <div class="progress-bar bg-dark w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="blom-two">
-                <h5>4 jan 2022</h5>
-                <img src="project-7.png" alt="">
-                <h3><strong>Creative Slide Show</strong></h3>
-                <p>Lorem ipsum dolor sit amet, cosector adipisicing elit. Dolore, porro rem quod illo quam,eum alias id, repellends magi, guas.</p>
-                <h6>Tag: <span>HTML</span>, <span>CSS</span></h6>
+          </div>
+          <div class="col-lg-7 h-75 ">
+            <div class="card z-index-2 vh-80 bg-gradient-danger">
+              <div class="card-header pb-0 bg-dark text-secondary">
+                <h6>Overview</h6>
+                <p class="text-sm">
+                  <i class="fa fa-arrow-up text-success"></i>
+                  <span class="font-weight-bold">28% more</span> in 2021
+                </p>
+              </div>
+              <div class="card-body p-3">
+                <div class="chart">
+                  <div id="curve_chart"></div>
+                </div>
+              </div>
             </div>
-            <div class="blom-three">
-                <h5>4 jan 2022</h5>
-                <img src="project-8.png" alt="">
-                <h3><strong>Image Gallary LIghtox</strong></h3>
-                <p>Lorem ipsum dolor sit amet, cosector adipisicing elit. Dolore, porro rem quod illo quam,eum alias id, repellends magi, guas.</p>
-                <h6>Tag: <span>HTML</span>, <span>CSS</span></h6>
-            </div>
+          </div>
         </div>
-    </div>
-<!-- Contact Page -->
-    <div class="contact-page" id="lastpage">
-        <h1><strong>Contact Me</strong></h1><hr><span><hr></span>
-        <div class="method">
-            <div class="phone">
-                <i class="fas fa-phone-alt"></i>
-                <h3><strong>Call Us On</strong></h3>
-                <p>+1 443 000 0000</p>
+        <div class="row my-4">
+          <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
+            <div class="card" id="card-icons">
+              <div class="card-header pb-0">
+                <div class="row">
+                  <div class="col-lg-6 col-7">
+                    <h6>Projects</h6>
+                    <p class="text-sm mb-0">
+                      <i class="fa fa-check text-info" aria-hidden="true"></i>
+                      <span class="font-weight-bold ms-1">30 done</span> this
+                      month
+                    </p>
+                  </div>
+                  <div class="col-lg-6 col-5 my-auto text-end">
+                    <div class="dropdown float-lg-end pe-4">
+                      <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-ellipsis-v text-secondary"></i>
+                      </a>
+                      <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
+                        <li>
+                          <a class="dropdown-item border-radius-md" href="">Action</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item border-radius-md" href="">Another action</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item border-radius-md" href="">Something else here</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body px-0 pb-2">
+                <div class="table-responsive">
+                  <table class="table align-items-center mb-0">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                          Courses
+                        </th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                          Groups
+                        </th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                          Projects
+                        </th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                          Completion
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <img src="img/bootstrap.png" class="avatar avatar-sm me-3" alt="xd" />
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm"> Bootstrap 5 Version</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="avatar-group mt-2">
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Ryan Tompson">
+                              <img src="img/p1.jpg" alt="team1" />
+                            </a>
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Romina Hadid">
+                              <img src="img/p2.jpg" alt="team2" />
+                            </a>
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Alexander Smith">
+                              <img src="img/p3.jpg" alt="team3" />
+                            </a>
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Jessica Doe">
+                              <img src="img/p4.jpg" alt="team4" />
+                            </a>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center text-sm">
+                          <span class="text-xs font-weight-bold">
+                            122
+                          </span>
+                        </td>
+                        <td class="align-middle">
+                          <div class="progress-wrapper w-75 mx-auto">
+                            <div class="progress-wrapper w-75 mx-auto">
+                              <div class="progress-info">
+                                <div class="progress-percentage">
+                                  <span class="text-xs font-weight-bold">60%</span>
+                                </div>
+                              </div>
+                              <div class="progress">
+                                <div class="progress-bar bg-gradient-info w-25" aria-valuenow="100" aria-valuemin="0"
+                                  aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <img src="img/js.png" class="avatar avatar-sm me-3" alt="atlassian" />
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm"> Add Progress Track</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="avatar-group mt-2">
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Romina Hadid">
+                              <img src="img/p5.jpg" alt="team5" />
+                            </a>
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Jessica Doe">
+                              <img src="img/p6.jpg" alt="team6" />
+                            </a>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center text-sm">
+                          <span class="text-xs font-weight-bold"> 76 </span>
+                        </td>
+                        <td class="align-middle">
+                          <div class="progress-wrapper w-75 mx-auto">
+                            <div class="progress-info">
+                              <div class="progress-percentage">
+                                <span class="text-xs font-weight-bold">10%</span>
+                              </div>
+                            </div>
+                            <div class="progress">
+                              <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <img src="img/figma.png" class="avatar avatar-sm me-3" alt="team7" />
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Figma Community Platform </h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="avatar-group mt-2">
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Romina Hadid">
+                              <img src="img/p3.jpg" alt="team8" />
+                            </a>
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Jessica Doe">
+                              <img src="img/p7.jpg" alt="team9" />
+                            </a>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center text-sm">
+                          <span class="text-xs font-weight-bold">
+                            Not set
+                          </span>
+                        </td>
+                        <td class="align-middle">
+                          <div class="progress-wrapper w-75 mx-auto">
+                            <div class="progress-info">
+                              <div class="progress-percentage">
+                                <span class="text-xs font-weight-bold">100%</span>
+                              </div>
+                            </div>
+                            <div class="progress">
+                              <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <img src="img/react.png" class="avatar avatar-sm me-3" alt="spotify" />
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">
+                                Launch our Mobile React App
+                              </h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="avatar-group mt-2">
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Ryan Tompson">
+                              <img src="img/p2.jpg" alt="user1" />
+                            </a>
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Romina Hadid">
+                              <img src="img/p5.jpg" alt="user2" />
+                            </a>
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Alexander Smith">
+                              <img src="img/p7.jpg" alt="user3" />
+                            </a>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center text-sm">
+                          <span class="text-xs font-weight-bold">
+                            120
+                          </span>
+                        </td>
+                        <td class="align-middle">
+                          <div class="progress-wrapper w-75 mx-auto">
+                            <div class="progress-info">
+                              <div class="progress-percentage">
+                                <span class="text-xs font-weight-bold">100%</span>
+                              </div>
+                            </div>
+                            <div class="progress">
+                              <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <img src="img/photoshop.png" class="avatar avatar-sm me-3" alt="jira" />
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">
+                                Add the New features With Photoshop
+                              </h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="avatar-group mt-2">
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Ryan Tompson">
+                              <img src="img/p1.jpg" alt="user5" />
+                            </a>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center text-sm">
+                          <span class="text-xs font-weight-bold"> 50 </span>
+                        </td>
+                        <td class="align-middle">
+                          <div class="progress-wrapper w-75 mx-auto">
+                            <div class="progress-info">
+                              <div class="progress-percentage">
+                                <span class="text-xs font-weight-bold">25%</span>
+                              </div>
+                            </div>
+                            <div class="progress">
+                              <div class="progress-bar bg-gradient-info w-25" role="progressbar" aria-valuenow="25"
+                                aria-valuemin="0" aria-valuemax="25"></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <img src="img/fire.png" class="avatar avatar-sm me-3" alt="invision" />
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">
+                                Firebase Plegin used projects
+                              </h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="avatar-group mt-2">
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Ryan Tompson">
+                              <img src="img/p7.jpg" alt="user6" />
+                            </a>
+                            <a href="" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
+                              data-bs-placement="bottom" title="Jessica Doe">
+                              <img src="img/p3.jpg" alt="user7" />
+                            </a>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center text-sm">
+                          <span class="text-xs font-weight-bold">43 </span>
+                        </td>
+                        <td class="align-middle">
+                          <div class="progress-wrapper w-75 mx-auto">
+                            <div class="progress-info">
+                              <div class="progress-percentage">
+                                <span class="text-xs font-weight-bold">40%</span>
+                              </div>
+                            </div>
+                            <div class="progress">
+                              <div class="progress-bar bg-gradient-info w-40" role="progressbar" aria-valuenow="40"
+                                aria-valuemin="0" aria-valuemax="40"></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
-            <div class="gps">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3><strong>Office</strong></h3>
-                <p>113 Street, Baltimore US</p>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <div class="card-header pb-0">
+                <h6>Weekly Project overview</h6>
+                <p class="text-sm">
+                  <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
+                  <span class="font-weight-bold">24%</span> this month
+                </p>
+              </div>
+              <div class="card-body p-3">
+                <div class="timeline timeline-one-side">
+                  <div class="timeline-block mb-3">
+                    <span class="timeline-step">
+                      <i class="ni ni-bell-55 text-success text-gradient"></i>
+                    </span>
+                    <div class="timeline-content">
+                      <h6 class="text-dark text-sm font-weight-bold mb-0">
+                        240, Design changes
+                      </h6>
+                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                        22 DEC 7:20 PM
+                      </p>
+                    </div>
+                  </div>
+                  <div class="timeline-block mb-3">
+                    <span class="timeline-step">
+                      <i class="ni ni-html5 text-danger text-gradient"></i>
+                    </span>
+                    <div class="timeline-content">
+                      <h6 class="text-dark text-sm font-weight-bold mb-0">
+                        Two New Design Started
+                      </h6>
+                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                        21 DEC 11 PM
+                      </p>
+                    </div>
+                  </div>
+                  <div class="timeline-block mb-3">
+                    <span class="timeline-step">
+                      <i class="ni ni-cart text-info text-gradient"></i>
+                    </span>
+                    <div class="timeline-content">
+                      <h6 class="text-dark text-sm font-weight-bold mb-0">
+                        5 Projects where posted in github
+                      </h6>
+                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                        21 DEC 9:34 PM
+                      </p>
+                    </div>
+                  </div>
+                  <div class="timeline-block mb-3">
+                    <span class="timeline-step">
+                      <i class="ni ni-credit-card text-warning text-gradient"></i>
+                    </span>
+                    <div class="timeline-content">
+                      <h6 class="text-dark text-sm font-weight-bold mb-0">
+                        grpoup project posted
+                      </h6>
+                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                        20 DEC 2:20 AM
+                      </p>
+                    </div>
+                  </div>
+                  <div class="timeline-block mb-3">
+                    <span class="timeline-step">
+                      <i class="ni ni-key-25 text-primary text-gradient"></i>
+                    </span>
+                    <div class="timeline-content">
+                      <h6 class="text-dark text-sm font-weight-bold mb-0">
+                        Unlock new course
+                      </h6>
+                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                        18 DEC 4:54 AM
+                      </p>
+                    </div>
+                  </div>
+                  <div class="timeline-block">
+                    <span class="timeline-step">
+                      <i class="ni ni-money-coins text-dark text-gradient"></i>
+                    </span>
+                    <div class="timeline-content">
+                      <h6 class="text-dark text-sm font-weight-bold mb-0">
+                        New member added
+                      </h6>
+                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                        17 DEC
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="email">
-                <i class="fas fa-envelope"></i>
-                <h3><strong>Email</strong></h3>
-                <p>info@gamil.com</p>
-            </div>
+          </div>
         </div>
-        <div class="contact-insertion">
-            <div class="contact-top">
-                <input type="text" placeholder="Name*">
-                <input class="seco" type="text" placeholder="Email*">
-            </div>
-            <div class="contact-midd">
-               <input type="text" placeholder="Subject*"> 
-            </div>
-            <div class="contact-last">
-                <input type="text" placeholder="Your Message...">
-            </div>
+
+        <div class="back_to_top">
+          <a class="" href="index.html"><span class="material-icons">
+              arrow_upward
+            </span></a>
         </div>
-        <div class="lastBtn">
-            <button >Send Message</button>
-        </div>
-        
-    </div>
-    <script src="cd.js"></script>
+
+        <footer class="footer pt-3">
+          <div class="container-fluid">
+            <div class="row align-items-center justify-content-lg-between">
+              <div class="col-lg-6 mb-lg-0 mb-4">
+                <div class="copyright text-center text-sm text-muted text-lg-start">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made by
+                  <a href="" class="font-weight-bold">Yakut Ahmedin</a>
+                  for NuCamp bootstrap portfolio project.
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link text-muted">Creative
+                      Projects</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link text-muted">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link text-muted">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link pe-0 text-muted">License</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+
+  <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

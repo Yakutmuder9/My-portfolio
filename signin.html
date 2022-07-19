@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Additional CSS must be placed after Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;700&display=swap"
+        rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/7e85f88570.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/styels.css" />
+
+    <title>Student Dashbord</title>
+    <link rel="shortcut icon" href="img/titel_logo.png" type="">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+    </script>
+</head>
+
+<body id="sign_in_page">
+
+    <div class="container d-block">
+        <nav class="navbar navbar-expand-lg blur blur-rounded shadow my-3 py-2 sticky-top" id="navbar_top">
+            <div class="container-fluid">
+                <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="">
+                    Student Dashboard
+                </a>
+                <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon mt-2">
+                        <span class="navbar-toggler-bar bar1"></span>
+                        <span class="navbar-toggler-bar bar2"></span>
+                        <span class="navbar-toggler-bar bar3"></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="navbar-nav mx-auto ms-xl-auto me-xl-7 ">
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center me-2 active text-info" aria-current="page"
+                                href="">
+                                <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link me-2 text-white" href="">
+                                <i class="fa fa-user opacity-6 text-dark me-1"></i>
+                                Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-2  text-white" href="">
+                                <i class="fas fa-key opacity-6 text-dark me-1"></i>
+                                Sign In
+                            </a>
+                        </li>
+                    </ul>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="btn btn-round btn-sm mb-0 btn-outline-primary me-2  text-primary" target="_blank"
+                            href=""><i class="fas fa-key opacity-6 text-dark me-1"></i>
+                            Sign up</a>
+                    </li>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container page-header min-vh-75 mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 d-flex flex-column mx-auto ">
+                        <div class="card card-plain mt-8 bg-transparent blur blur-rounded shadow">
+                            <div class="card-header pb-0 text-left ">
+                                <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
+                                <p class="mb-0">Enter your email and password to sign in</p>
+                            </div>
+                            <div class="card-body">
+
+                                <div class="container mt-2">
+                                    <div class="row">
+                                        <div class="col-10 offset">
+                                            <form action="index.html" id="myForm1" class="needs-validation">
+                                                <div class="form-group">
+                                                    <div class="d-flex justify-content-between">
+                                                        <label for="">First Name<input name="myInput" id="fisrtNameId" ytpe="text"
+                                                        class="form-control"  required> </label>
+                                                        <label class="ms-3" for="">Last Name<input  name="myInput" id="lastNameId" type="text"
+                                                        class="form-control" required></label> 
+                                                    </div>
+                                                   
+                                                    <div class="valid-feedback">Valid</div>
+                                                    <div class="invalid-feedback">a to z only (2 to 15 long)</div>
+                                                </div>
+                                                <div class="form-group">
+                                                    E-mail<input type="email" name="myInput" id="emailId"
+                                                        class="form-control" required>
+                                                    <div class="valid-feedback">Valid</div>
+                                                    <div class="invalid-feedback">Not a valid email address</div>
+                                                </div>
+                                                <div class="form-group">
+                                                    Password<input type="text" id="pwdId" class="form-control"
+                                                        required>
+                                                    <div class="valid-feedback">Valid</div>
+                                                    <div class="invalid-feedback">a to z only (2 to 6 long)</div>
+                                                </div>
+                                                <div class="form-group">
+                                                    Confirm Password<input type="text" id=""
+                                                        class="form-control myCpwdClass" required>
+                                                    <div id="cPwdValid" class="valid-feedback">Passwords Match</div>
+                                                    <div id="cPwdInvalid" class="invalid-feedback">a to z only (2 to 6 long)</div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" id="agreeId"
+                                                            class="custom-control-input form-control" required>
+                                                        <label for="agreeId" id="agreeLabelId"
+                                                            class="custom-control-label ml-2">Agree to terms <a
+                                                                href="#"
+                                                                target="_blank"> (terms & conditions)</a></label>
+                                                        <div id="agreeValid" class="valid-feedback">Valid</div>
+                                                        <div id="agreeInvalid" class="invalid-feedback">Needs to be checked</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button id="submitBtn" type="submit" class="btn btn-secondary">Register</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                                <p class="mb-2 text-sm mx-auto">
+                                    Don't have an account?
+                                    <a href="index.html" class="text-info text-gradient font-weight-bold">Sign
+                                        up</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-none d-lg-block d-xl-block">
+                        <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8" id="signin_svg">
+                            <img src="img/bg.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mb-4 mx-auto text-center">
+                        <a href="" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                            Company
+                        </a>
+                        <a href="" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                            About Us
+                        </a>
+                        <a href="" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                            Team
+                        </a>
+                        <a href="" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                            Products
+                        </a>
+                        <a href="" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                            Blog
+                        </a>
+                        <a href="" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                            Pricing
+                        </a>
+                    </div>
+                    <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
+                        <a href="" class="text-secondary me-xl-4 me-4">
+                            <span class="text-lg fab fa-dribbble"></span>
+                        </a>
+                        <a href="" class="text-secondary me-xl-4 me-4">
+                            <span class="text-lg fab fa-twitter"></span>
+                        </a>
+                        <a href="" class="text-secondary me-xl-4 me-4">
+                            <span class="text-lg fab fa-instagram"></span>
+                        </a>
+                        <a href="" class="text-secondary me-xl-4 me-4">
+                            <span class="text-lg fab fa-pinterest"></span>
+                        </a>
+                        <a href="" class="text-secondary me-xl-4 me-4">
+                            <span class="text-lg fab fa-github"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8 mx-auto text-center mt-1">
+                        <p class="mb-0 text-secondary">
+                            Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> Soft by Creative Tim.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+    </script>
+
+    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <source src="script.js" type="">
+</body>
+
+</html>
